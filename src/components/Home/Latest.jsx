@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { Fade } from "react-awesome-reveal";
+import Subscribers from "@/components/Subscribers/Subscribers";
 const Latest = () => {
     return (
         <div className="container mt-5">
@@ -137,34 +138,15 @@ const Latest = () => {
                                </div>
                            </Link>
                        </Fade>
-
-            
-
-                       
-
-
-
                        <div className="bg-dark mt-2 rounded-1 text-white p-2">
                            <span className="p-1">SUBSCRIBE</span>
                        </div>
-
-
                        <div className="col-12 py-1 px-0">
-
-                           <div className="card p-3 shadow-sm">
-                               <span className="f-52 text-center text-muted"> <i className="bi  bi-envelope"></i></span>
-                               <h6 className="text-center mb-3 mt-0">News Letter</h6>
-
-                               <input type="text" placeholder="Email Address" className="form-control mb-3"/>
-                               <button className="btn btn-danger">Confirm</button>
-                           </div>
+                            <Subscribers/>
                        </div>
-
-
                    </div>
                </div>
-           </div>
-
+           </div> 
         </div>
     );
 };

@@ -16,8 +16,7 @@ const SideLayout = (props) => {
     if(currentPath==="/"){
         title="HOME";
     }
-
-
+    
     const MenuBarClickHandler = () => {
         let sideNav = sideNavRef;
         let content = contentRef;
@@ -36,13 +35,8 @@ const SideLayout = (props) => {
 
     return (
         <Fragment>
-
-
             <div ref={(div) =>{sideNavRef=div}} className="side-nav-open">
-
                 <img className="side-nav-logo" src="/images/logo_white.svg"/>
-
-
                 <Link  className={current==="/"?"side-bar-item-active side-bar-item mt-2" :"side-bar-item mt-2"}  href="/"  >
                     <img className="w-8" src="/images/house.svg"/>
                     <span className="mx-2 side-bar-item-caption">Home</span>
@@ -52,10 +46,7 @@ const SideLayout = (props) => {
                     <img className="w-8" src="/images/person-bounding-box.svg"/>
                     <span className="mx-2 side-bar-item-caption">Profile</span>
                 </Link>
-
-
             </div>
-
             <div ref={(div) => contentRef = div} className="content">
                 <Navbar className="px-0 bg-white shadow-sm sticky-top">
                     <div className="container-fluid">
@@ -68,7 +59,6 @@ const SideLayout = (props) => {
                 </Navbar>
                 <div className="p-3">{props.children}</div>
             </div>
-
         </Fragment>
     );
 };

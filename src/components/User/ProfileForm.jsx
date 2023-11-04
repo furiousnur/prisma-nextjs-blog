@@ -1,6 +1,6 @@
 "use client"
 import {useEffect, useState} from "react";
-import {ErrorToast,IsEmail,IsEmpty} from "@/utility/FormHelper";
+import {ErrorToast, IsEmail, IsEmpty, SuccessToast} from "@/utility/FormHelper";
 import SubmitButton from "@/components/SubmitButton/SubmitButton";
 const ProfileForm = (props) => {
     const [data, setData] = useState({firstName:"",lastName:"",email:"",mobile:"",password:""});
@@ -16,35 +16,42 @@ const ProfileForm = (props) => {
             [name]:value
         }))
     }
-    const formSubmit = (e) => {
-      e.preventDefault();
-      if(IsEmpty(data.fName)){
-          ErrorToast("First Name Required")
-      }
-      else if(IsEmpty(data.lName)){
-          ErrorToast("Last Name Required")
-      }
-      else if(IsEmpty(data.mobile)){
-          ErrorToast("Mobile No Required")
-      }
-      else if(IsEmail(data.email)){
-          ErrorToast("Valid Email Address Required")
-      }
-      else if(IsEmpty(data.password)){
-          ErrorToast("Password Required")
-      }
-      else{
+    const formSubmit = async (e) => {
+        e.preventDefault();
+        if(IsEmpty(data.firstName)){
+            ErrorToast("First Name Required")
+        }else if(IsEmpty(data.lastName)){
+            ErrorToast("Last Name Required")
+        }else if(IsEmpty(data.mobile)){
+            ErrorToast("Mobile No Required")
+        }else if(IsEmail(data.email)){
+            ErrorToast("Valid Email Address Required")
+        }else if(IsEmpty(data.password)){
+            ErrorToast("Password Required")
+        }else{
           setSubmit(true)
-          alert(JSON.stringify(data))
-      }
+            const options = {
+                method: 'PUT',
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }
+
+            const res = await fetch("/api/profile", options);
+            const ResJson = await res.json();
+
+            if (ResJson['status'] === "success") {
+                SuccessToast("Profile Updated Success");
+            } else {
+                setSubmit(false);
+                ErrorToast("Request Fail");
+            }
+        }
     }
 
     return (
         <form onSubmit={formSubmit}>
             <div className="row h-100">
-
                 <div className="col-md-12 col-lg-12 col-sm-12 col-12 ">
-
                     <div className="card container animated fadeIn p-5 gradient-bg">
                         <h5 className="mb-3">Profile</h5>
 

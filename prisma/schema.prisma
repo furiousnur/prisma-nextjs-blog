@@ -23,3 +23,47 @@ model users {
   createdAt  DateTime     @default(now()) @db.Timestamp(0)
   updatedAt  DateTime     @default(now()) @db.Timestamp(0) @updatedAt
 }
+
+model socials{
+    id         Int          @id @default(autoincrement())
+    facebook   String       @db.VarChar(200)
+    youtube    String       @db.VarChar(200) 
+    twitter    String       @db.VarChar(200) 
+    linkedin   String       @db.VarChar(200)
+    about      String       @db.Text
+    address    String         @db.Text
+    createdAt  DateTime     @default(now()) @db.Timestamp(0)
+    updatedAt  DateTime     @default(now()) @db.Timestamp(0) @updatedAt
+}
+
+model subscribers {
+   id         Int          @id @default(autoincrement())
+   email      String       @db.VarChar(50) @unique 
+   createdAt  DateTime     @default(now()) @db.Timestamp(0)
+   updatedAt  DateTime     @default(now()) @db.Timestamp(0) @updatedAt
+}
+
+model categories {
+   id         Int          @id @default(autoincrement())
+   name       String       @db.VarChar(100) @unique
+   createdAt  DateTime     @default(now()) @db.Timestamp(0)
+   updatedAt  DateTime     @default(now()) @db.Timestamp(0) @updatedAt
+   news_list  news_list[]
+}
+
+model news_list {
+   id                Int          @id @default(autoincrement())
+   catID             Int
+   title             String       @db.VarChar(100)
+   short_des         String       @db.Text
+   long_des          String       @db.Text
+   keywords          String       @db.VarChar(300)
+   type              String       @db.VarChar(50)
+   img1              String       @db.VarChar(300)
+   img2              String       @db.VarChar(300)
+   img3              String       @db.VarChar(300)
+   img4              String       @db.VarChar(300)
+   categories        categories   @relation(fields: [catID], references: [id], onDelete: Restrict, onUpdate: Cascade)
+   createdAt         DateTime     @default(now()) @db.Timestamp(0)
+   updatedAt         DateTime     @default(now()) @db.Timestamp(0) @updatedAt
+}

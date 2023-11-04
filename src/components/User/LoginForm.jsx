@@ -2,12 +2,9 @@
 import {useState} from "react";
 import {ErrorToast, IsEmail, IsEmpty, SuccessToast} from "@/utility/FormHelper";
 import SubmitButton from "@/components/SubmitButton/SubmitButton";
-
-
+import Link from "next/link";
 
 const LoginForm = () => {
-
-
     let [data, setData] = useState({email:"",password:""});
     const [submit, setSubmit] = useState(false);
     const inputOnChange = (name,value) => {
@@ -53,16 +50,18 @@ const LoginForm = () => {
        <div className="row h-100 justify-content-center center-screen">
            <div className="col-md-4 col-lg-4 col-sm-12 col-12 ">
                <form onSubmit={formSubmit} className="card animated fadeIn p-5 gradient-bg">
+                   <h5 className="mb-3 text-center">User Login</h5>
+                   <hr/>
+                   <label className="form-label"><strong>User Email</strong></label>
+                   <input onChange={(e)=>{inputOnChange("email",e.target.value)}} type="email" className="form-control mb-2" placeholder="User Email"/>
 
-                   <h5 className="mb-3">User Login</h5>
-                   <label className="form-label">User Email</label>
-                   <input onChange={(e)=>{inputOnChange("email",e.target.value)}} type="email" className="form-control mb-2"/>
-
-                   <label className="form-label">User Password</label>
-                   <input onChange={(e)=>{inputOnChange("password",e.target.value)}} type="password" className="form-control mb-1"/>
-
+                   <label className="form-label"><strong>User Password</strong></label>
+                   <input onChange={(e)=>{inputOnChange("password",e.target.value)}} type="password" className="form-control mb-1" placeholder="User Password"/>
                    <SubmitButton className="btn btn-danger mt-3" submit={submit} text="Login"/>
-
+                   <div className="my-3 d-flex">
+                       <Link href="/User/SignUp" className="nav-link mx-2">Sign Up</Link> |
+                       <Link href="/User/EmailVerify" className="nav-link mx-2"> Forget Password</Link>
+                   </div> 
                </form>
            </div>
        </div>

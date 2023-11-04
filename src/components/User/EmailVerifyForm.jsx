@@ -2,6 +2,7 @@
 import {useState} from "react";
 import {ErrorToast,IsEmail} from "@/utility/FormHelper";
 import SubmitButton from "@/components/SubmitButton/SubmitButton";
+import Link from "next/link";
 const EmailVerifyForm = () => {
     const [data, setData] = useState({email:""});
     const [submit, setSubmit] = useState(false);
@@ -30,6 +31,10 @@ const EmailVerifyForm = () => {
                    <label className="form-label">User Email</label>
                    <input onChange={(e)=>{inputOnChange("email",e.target.value)}} type="email" className="form-control mb-2"/>
                    <SubmitButton className="btn btn-danger mt-3" submit={submit} text="Next"/>
+                   <div className="my-3 d-flex">
+                       <Link href="/User/Login" className="nav-link mx-2">Login</Link> |
+                       <Link href="/User/SignUp" className="nav-link mx-2">Sign Up</Link>
+                   </div>
                </form>
            </div>
        </div>
