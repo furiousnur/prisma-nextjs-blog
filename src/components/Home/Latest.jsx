@@ -11,7 +11,6 @@ const Latest = () => {
            <div className="row">
                <div className="col-md-9 col-lg-9 col-sm-12 col-12 px-3">
                    <div className="row">
-
                        <Fade className="p-2 col-md-4">
                            <div className="card bg-white shadow-sm">
                                <img className="card-img-top" src="https://www.aljazeera.com/wp-content/uploads/2023/04/2023-04-05T034020Z_890746073_RC2380AMCMR6_RTRMADP_3_ISRAEL-PALESTINIANS-VIOLENCE-ALAQSA-1.jpg" className="card-img-top" alt="News Image"/>
@@ -78,9 +77,6 @@ const Latest = () => {
                                </div>
                            </div>
                        </Fade>
-                        
-                       
-                      
                    </div>
                </div>
 

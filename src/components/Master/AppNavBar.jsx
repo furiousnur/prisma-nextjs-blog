@@ -4,10 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Link from "next/link";
 import UserDropDown from "@/components/Master/UserDropDown";
 
-
 function AppNavBar(props) {
-
-
     return (
         <>
             <div className="py-2 bg-dark text-white container-fluid">
@@ -36,11 +33,10 @@ function AppNavBar(props) {
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="me-auto ms-3 my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
                             <Link className="nav-link f-13" href="/">Home</Link>
-                            <Link className="nav-link f-13"  href="/">Insights</Link>
-                            <Link className="nav-link f-13"  href="/">History</Link>
-                            <Link className="nav-link f-13"  href="/">Environment</Link>
-                            <Link className="nav-link f-13"  href="/">Identities</Link>
-                            <Link className="nav-link f-13"  href="/">Travel</Link>
+                            <Link className="nav-link f-13"  href="/about">About</Link>
+                            <Link className="nav-link f-13"  href="/service">Service</Link>
+                            <Link className="nav-link f-13"  href="/blog">Blog</Link>
+                            <Link className="nav-link f-13"  href="/contact">Contact</Link> 
                         </Nav>
                         <div className="d-flex ms-3">
                             <div className="input-group">
@@ -48,10 +44,7 @@ function AppNavBar(props) {
                                 <button className="btn btn-danger" type="button"><i className="bi bi-search"></i></button>
                             </div>
                         </div>
-
-
                         {props.firstName==="0"?( <Link href="/User/Login" className="btn ms-3 btn-outline-danger">Login</Link>) :(<UserDropDown/>)}
-
                     </Navbar.Collapse>
                 </div>
             </Navbar>

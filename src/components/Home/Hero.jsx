@@ -4,14 +4,11 @@ import Carousel from 'react-bootstrap/Carousel';
 import { Fade } from "react-awesome-reveal";
 import Link from 'next/link';
 const Hero = () => {
-
-
     const [index, setIndex] = useState(0);
     const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex);
     };
-
-
+    
     return (
         <div className="container section-top">
             <div className="row">
@@ -42,10 +39,7 @@ const Hero = () => {
                                 </Carousel.Caption>
                             </Link>
                         </Carousel.Item>
-
-
                     </Carousel>
-
                 </div>
                 <div className="col-md-4 col-lg-4 col-sm-6 p-1 col-6">
                     <Link href=""  id='Hero' className="card h-100">
