@@ -42,9 +42,13 @@ const SideLayout = (props) => {
                     <span className="mx-2 side-bar-item-caption">Home</span>
                 </Link>
 
-                <Link  className={current==="/Profile"?"side-bar-item-active side-bar-item mt-2" :"side-bar-item mt-2"}  href="/Profile"  >
+                <Link  className={current==="/Dashboard/Profile"?"side-bar-item-active side-bar-item mt-2" :"side-bar-item mt-2"}  href="/Dashboard/Profile"  >
                     <img className="w-8" src="/images/person-bounding-box.svg"/>
                     <span className="mx-2 side-bar-item-caption">Profile</span>
+                </Link>
+                <Link  className={current==="/Dashboard/Settings"?"side-bar-item-active side-bar-item mt-2" :"side-bar-item mt-2"}  href="/Dashboard/Settings"  >
+                    <img className="w-8" src="/images/person-bounding-box.svg"/>
+                    <span className="mx-2 side-bar-item-caption">Settings</span>
                 </Link>
             </div>
             <div ref={(div) => contentRef = div} className="content">
