@@ -27,7 +27,7 @@ function AppNavBar(props) {
             <Navbar expand="lg" className="bg-white sticky-top shadow-sm">
                 <div className="container">
                     <div className="navbar-brand">
-                        <img className="nav-logo" src={"/images/logo.svg"} alt="img"/>
+                        <img className="nav-logo" src={"/images/logo1.png"} alt="img"/>
                     </div>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">

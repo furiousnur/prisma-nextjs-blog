@@ -54,39 +54,34 @@ const ProfileForm = (props) => {
                 <div className="col-md-12 col-lg-12 col-sm-12 col-12 ">
                     <div className="card container animated fadeIn p-5 gradient-bg">
                         <h5 className="mb-3">Settings</h5>
-
                         <div className="row">
-                        <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
-                            <label className="form-label">First Name</label>
-                            <input value={data.firstName} onChange={(e)=>{inputOnChange("firstName",e.target.value)}} type="text" className="form-control mb-2"/>
+                            <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
+                                <label className="form-label">First Name</label>
+                                <input value={data.firstName} onChange={(e)=>{inputOnChange("firstName",e.target.value)}} type="text" className="form-control mb-2"/>
+                            </div>
+                            <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
+                                <label className="form-label">Last Name</label>
+                                <input value={data.lastName} onChange={(e)=>{inputOnChange("lastName",e.target.value)}} type="text" className="form-control mb-2"/>
+                            </div>
+                            <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
+                                <label className="form-label">Mobile</label>
+                                <input value={data.mobile} onChange={(e)=>{inputOnChange("mobile",e.target.value)}} type="text" className="form-control mb-2"/>
+                            </div>
+                            <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
+                                <label className="form-label">Email</label>
+                                <input value={data.email}  onChange={(e)=>{inputOnChange("email",e.target.value)}} type="email" className="form-control mb-2"/>
+                            </div>
+                            <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
+                                <label className="form-label">Password</label>
+                                <input value={data.password}  onChange={(e)=>{inputOnChange("password",e.target.value)}} type="password" className="form-control mb-2"/>
+                            </div>
                         </div>
-                        <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
-                            <label className="form-label">Last Name</label>
-                            <input value={data.lastName} onChange={(e)=>{inputOnChange("lastName",e.target.value)}} type="text" className="form-control mb-2"/>
-                        </div>
-                        <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
-                            <label className="form-label">Mobile</label>
-                            <input value={data.mobile} onChange={(e)=>{inputOnChange("mobile",e.target.value)}} type="text" className="form-control mb-2"/>
-                        </div>
-                        <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
-                            <label className="form-label">Email</label>
-                            <input value={data.email}  onChange={(e)=>{inputOnChange("email",e.target.value)}} type="email" className="form-control mb-2"/>
-                        </div>
-                        <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
-                            <label className="form-label">Password</label>
-                            <input value={data.password}  onChange={(e)=>{inputOnChange("password",e.target.value)}} type="password" className="form-control mb-2"/>
-                        </div>
-                    </div>
-
                         <div className="row">
                             <div className="col-md-4 col-lg-4 col-sm-12 p-2 col-12">
                                 <SubmitButton className="btn btn-danger w-100 mt-3" submit={submit} text="Update"/>
                             </div>
                         </div>
-                        
-
                     </div>
-
                 </div>
             </div>
         </form>
