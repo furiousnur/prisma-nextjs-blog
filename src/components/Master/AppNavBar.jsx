@@ -32,19 +32,16 @@ function AppNavBar(props) {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="me-auto ms-3 my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-                            <Link className="nav-link f-13" href="/">Home</Link>
-                            <Link className="nav-link f-13"  href="/about">About</Link>
-                            <Link className="nav-link f-13"  href="/service">Service</Link>
-                            <Link className="nav-link f-13"  href="/blog">Blog</Link>
-                            <Link className="nav-link f-13"  href="/contact">Contact</Link> 
+                            <Link className="nav-link f-16" href="/">All Adds</Link>
                         </Nav>
-                        <div className="d-flex ms-3">
+                        {/*<div className="d-flex ms-3">
                             <div className="input-group">
                                 <input type="text" className="form-control" placeholder="Search..."/>
                                 <button className="btn btn-danger" type="button"><i className="bi bi-search"></i></button>
                             </div>
-                        </div>
-                        {props.firstName==="0"?( <Link href="/User/Login" className="btn ms-3 btn-outline-danger">Login</Link>) :(<UserDropDown/>)}
+                        </div>*/}
+                        {props.firstName==="0"?( <Link href="/User/Login" className="btn ms-3 btn-outline-success">Login</Link>) :(<UserDropDown/>)}
+                        <button style={{ marginLeft: '5px' }} className="btn btn-warning" type="button">POST YOUR ADD</button>
                     </Navbar.Collapse>
                 </div>
             </Navbar>
